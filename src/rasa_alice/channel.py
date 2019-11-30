@@ -45,9 +45,6 @@ class AliceOutput(CollectingOutputChannel):
     async def send_custom_json(
         self, recipient_id: Text, json_message: Dict[Text, Any], **kwargs: Any
     ) -> None:
-
-        print(json_message)
-
         message = AliceResponse(**json_message)
         await self._persist_message(message)
 
